@@ -1,33 +1,24 @@
-import { Component, resource } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { httpResource } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-interface CoolThing {
-  id: number;
-  name: string;
-  description?: string;
-}
-
 @Component({
-  selector: 'app-state',
-  imports: [RouterLink],
-  template: `
-    <h3>State Demo - a list of cool things</h3>
+  selector: 'app-uncool-demo',
+  template: `<h3>State Demo - a list of UNCOOL things</h3>
 
     @if (coolThings.isLoading()) {
     <div class="loading">
-      <p>Loading cool things...</p>
+      <p>Loading uncool things...</p>
     </div>
     } @if (coolThings.error()) {
     <div class="error">
-      <p>Error loading cool things: {{ coolThings.error()?.message }}</p>
+      <p>Error loading uncool things: {{ coolThings.error()?.message }}</p>
       <button (click)="reload()">Try Again</button>
     </div>
     } @if (coolThings.value(); as coolThingsList) {
     <div class="cool-things">
       @if (coolThingsList.length === 0) {
-      <p>No cool things found.</p>
+      <p>No uncool things found.</p>
       } @else {
       <ul>
         @for (thing of coolThingsList; track $index) {
@@ -38,14 +29,14 @@ interface CoolThing {
       </ul>
       }
     </div>
-    <p style="margin-top:100px;"><a routerLink="/uncool-demo">Go to Uncool Things Demo</a></p>
-    }
-  `,
+    }`,
+  styles: ``,
 })
-export class State {
-  coolThings = httpResource<string[]>(() => '/api/cool-things');
-
-  constructor() {}
+export class UncoolDemo {
+  coolThings = httpResource<string[]>(() => ({
+    url: '/api/uncool-things',
+    transferCache: false,
+  }));
   reload() {
     this.coolThings.reload();
   }
