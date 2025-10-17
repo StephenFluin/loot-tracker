@@ -12,7 +12,10 @@ import { Deferred } from '../deferred/deferred';
     <p>Your signal state is {{ signalState() }}</p>
     <app-hydrated />
     <app-unhydrated />
+
+    @defer(hydrate on hover) {
     <app-deferred />
+    }
   `,
   styles: ``,
 })
