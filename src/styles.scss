@@ -1,15 +1,196 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles for the loot tracker demo application */
+
+/* CSS Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #e0e6ed;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main app container */
+app-root {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(30, 39, 46, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f8f9fa;
+  margin-bottom: 30px;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 8px;
+
+  span {
+    display: inline-block;
+  }
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #e0e6ed;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #4facfe;
+  padding-bottom: 8px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #b8c5d1;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  background: rgba(52, 73, 94, 0.8);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  div {
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+    color: #e0e6ed;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: block;
+
+    &:hover {
+      color: #4facfe;
+    }
+  }
+}
+
+/* Component box styles */
 app-hydrated,
 app-unhydrated,
 app-deferred {
-  border: 1px solid green;
   display: block;
-  padding: 8px;
-  border-radius: 8px;
-  margin: 8px 0;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  background: rgba(44, 62, 80, 0.8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  }
 }
-nav {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+
+app-hydrated,
+app-unhydrated {
+  border-left: 5px solid #2ecc71;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(39, 174, 96, 0.15) 100%);
+
+  h3 {
+    color: #2ecc71;
+    border-bottom-color: #2ecc71;
+  }
+}
+
+app-deferred {
+  border-left: 5px solid #f39c12;
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.15) 0%, rgba(230, 126, 34, 0.15) 100%);
+
+  h3 {
+    color: #f39c12;
+    border-bottom-color: #f39c12;
+  }
+}
+
+/* Button styles (for future use) */
+button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #1a1a2e;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  app-root {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+      text-align: center;
+    }
+  }
+
+  app-hydrated,
+  app-unhydrated,
+  app-deferred {
+    padding: 20px;
+    margin: 15px 0;
+  }
 }

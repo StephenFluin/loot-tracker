@@ -27,6 +27,23 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the server!' });
 });
 
+app.get('/api/cool-things', (req, res) => {
+  res.json([
+    'Angular',
+    'SSR',
+    'Hydration',
+    'Deferred Loading',
+    'Deferred Hydration',
+    'Signals',
+    'HeroDevs',
+    'Deborah Kurata',
+  ]);
+});
+
+app.get('/api/uncool-things', (req, res) => {
+  res.json(['Spam', 'Scams', 'Malware']);
+});
+
 /**
  * Serve static files from /browser
  */

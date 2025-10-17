@@ -5,6 +5,7 @@ import { Deferred } from '../deferred/deferred';
   selector: 'app-defer-demo',
   imports: [Deferred],
   template: `
+    <h3>&#64;defer Demo</h3>
     <p>A component that is deferred loading hover:</p>
     @defer (on hover) {
     <app-deferred />

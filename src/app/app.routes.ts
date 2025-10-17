@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () => import('./defer-demo/defer-demo').then((m) => m.DeferDemo),
   },
   {
+    path: 'state',
+    loadComponent: () => import('./state/state').then((m) => m.State),
+  },
+  {
     path: 'about',
     loadComponent: () => import('./about/about').then((m) => m.About),
   },

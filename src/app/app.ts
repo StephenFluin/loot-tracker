@@ -6,14 +6,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   imports: [RouterOutlet, RouterLink],
   template: `
     <h1 (click)="incrementCounter()">
-      <span>Welcome to {{ title() }}! </span>
+      <span>{{ title() }}!</span>
       @if(increment()) { ({{ increment() }}) }
     </h1>
     <nav>
       <div><a routerLink="/">Home</a></div>
+      <div><a routerLink="/state">State Transfer</a></div>
       <div><a routerLink="/hydration-demo">Hydration Demo</a></div>
       <div><a routerLink="/defer-demo">Defer Demo</a></div>
-      <div><a routerLink="/about">About</a></div>
     </nav>
 
     <router-outlet />

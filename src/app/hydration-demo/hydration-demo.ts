@@ -6,6 +6,7 @@ import { Unhydrated } from '../unhydrated/unhydrated';
   selector: 'app-hydration-demo',
   imports: [Hydrated, Unhydrated],
   template: `
+    <h3>Hydration Demo</h3>
     <app-hydrated />
     <app-unhydrated />
   `,
