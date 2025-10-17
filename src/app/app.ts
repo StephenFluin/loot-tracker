@@ -11,8 +11,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     </h1>
     <nav>
       <div><a routerLink="/">Home</a></div>
+      <div><a routerLink="/hydration-demo">Hydration Demo</a></div>
+      <div><a routerLink="/defer-demo">Defer Demo</a></div>
       <div><a routerLink="/about">About</a></div>
-      <div><a routerLink="/auth">Sign In</a></div>
     </nav>
 
     <router-outlet />
@@ -20,7 +21,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styles: [],
 })
 export class App {
-  protected readonly title = signal('loot-tracker');
+  protected readonly title = signal("Stephen's ng-conf Demo");
   protected readonly increment = signal(0);
 
   protected incrementCounter() {

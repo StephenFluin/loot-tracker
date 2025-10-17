@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-unhydrated',
-  imports: [],
   host: { ngSkipHydration: 'true', style: '' },
   template: `
-    <p>unhydrated works!</p>
+    <h3>Unhydrated Component</h3>
     <p>{{ description }}</p>
   `,
   styles: ``,

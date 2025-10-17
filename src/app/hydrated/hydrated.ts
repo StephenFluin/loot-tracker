@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-hydrated',
   imports: [],
   template: `
-    <p>hydrated works!</p>
+    <h3>Hydrated Component</h3>
     <p>{{ description }}</p>
   `,
   styles: ``,
