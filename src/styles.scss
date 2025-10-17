@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+app-hydrated,
+app-unhydrated {
+  border: 1px solid green;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
