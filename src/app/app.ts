@@ -21,7 +21,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styles: [],
 })
 export class App {
-  protected readonly title = signal("Stephen's DevFestMN Demo");
+  protected readonly title = signal("Stephen's SSR Demo");
   protected readonly increment = signal(0);
 
   protected incrementCounter() {
